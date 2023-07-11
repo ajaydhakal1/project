@@ -107,30 +107,94 @@
   span {
     color: var(--main-color);
   }
-  .navlist {
-    text-align: right;
-    display: flex;
-  }
-  .navlist a {
-    color: var(--second-color);
-    font-size: 17px;
-    font-family: 500;
-    margin: 0 25px;
-    transition: all 0.45s ease;
-  }
-  .navlist a:hover {
-    color: rgb(241, 99, 5);
-  }
-  .navlist a:active {
-    color: rgb(76, 241, 5);
-  }
-  #menu-icon {
+  
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  background-color: #2a2e5a;
+  color: white;
+}
+
+.title{
+  font-size: 36px;
+  margin: .5rem;
+}
+
+.navlinks ul{
+  text-decoration: none;
+display: flex;
+}
+
+.navlinks li{
+  list-style: none;
+}
+
+.navlinks li a{
+text-decoration: none;
+color: #fff;
+display: block;
+padding: 1rem;
+}
+
+.navlinks li a:hover{
+  color: #ea6d15;
+} 
+
+  .toogle-button{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
     font-size: 35px;
     color: var(--second-color);
-    z-index: 10001;
     cursor: pointer;
-    margin-left: 25px;
   }
+
+  .toogle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 400px) {
+    .toogle-button{
+      display: flex;
+    }
+
+    .navlinks{
+      display: none;
+      width: 100%;
+    }
+
+    .navbar{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .navlinks ul{
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .navlinks li{
+      text-align: center;
+    }
+
+    .navlinks li a{
+      padding: .5rem 1rem;
+    }
+
+    .navlinks.active{
+      display: flex;
+    }
+  }
+
+
   section {
     padding: 160px 15% 120px;
   }
