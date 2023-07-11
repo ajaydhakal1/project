@@ -64,8 +64,9 @@
     }
     
     body {
-      margin: var(--header-height) 0 0 0;
-      font-size: var(--body-font);
+margin: 0;
+padding: 0;
+font-size: var(--body-font);
       font-size: var(--normal-font-size);
       color: var(--second-color);
     }
@@ -110,7 +111,9 @@
   
 .navbar{
   display: flex;
+  position: relative;
   justify-content: space-between;
+  align-items: center;
   background-color: #2a2e5a;
   color: white;
 }
@@ -120,9 +123,14 @@
   margin: .5rem;
 }
 
+.navlinks{
+  height: 100%;
+}
+
 .navlinks ul{
-  text-decoration: none;
 display: flex;
+margin: 0;
+padding: 0;
 }
 
 .navlinks li{
@@ -130,9 +138,9 @@ display: flex;
 }
 
 .navlinks li a{
+  display: block;
 text-decoration: none;
 color: #fff;
-display: block;
 padding: 1rem;
 }
 
@@ -140,61 +148,27 @@ padding: 1rem;
   color: #ea6d15;
 } 
 
+
   .toogle-button{
+    font-size: 36px;
     position: absolute;
     top: .75rem;
     right: 1rem;
-    display: none;
+    display:none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 21px;
-    font-size: 35px;
-    color: var(--second-color);
-    cursor: pointer;
   }
 
-  .toogle-button .bar{
+  .toogle-button .bar {
     height: 3px;
     width: 100%;
     background-color: #fff;
     border-radius: 10px;
   }
 
-  @media (max-width: 400px) {
-    .toogle-button{
-      display: flex;
-    }
-
-    .navlinks{
-      display: none;
-      width: 100%;
-    }
-
-    .navbar{
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .navlinks ul{
-      width: 100%;
-      flex-direction: column;
-    }
-
-    .navlinks li{
-      text-align: center;
-    }
-
-    .navlinks li a{
-      padding: .5rem 1rem;
-    }
-
-    .navlinks.active{
-      display: flex;
-    }
-  }
-
-
+ 
   section {
     padding: 160px 15% 120px;
   }
@@ -416,101 +390,37 @@ padding: 1rem;
     }
   
     /*============= Media Queries =============*/
-  @media screen and (min-width: 768px) {
-      body {
-        margin: 0;
+    @media (max-width: 400px) {
+      .navbar {
+          flex-direction: column;
+          align-items: flex-start;
       }
-    
-      .section {
-        padding-top: 4rem;
-        padding-bottom: 3rem;
+   
+      .toggle-button {
+          display: flex;
       }
-    
-      .section_title {
-        margin-bottom: var(--mb-6);
+  
+      .navlinks {
+          display: none;
+          width: 100%;
       }
-    
-      .section_title::after {
-        width: 80px;
-        top: 3rem;
+  
+      .navlinks ul {
+          width: 100%;
+          flex-direction: column;
       }
-    
-      .nav {
-        height: calc(var(--header-height) + 1rem);
+  
+      .navlinks ul li {
+          text-align: center;
       }
-    
-      .nav_list {
-        display: flex;
-        padding-top: 0;
+  
+      .navlinks ul li a {
+          padding: .5rem 1rem;
       }
-    
-      .nav_item {
-        margin-left: var(--mb-6);
-        margin-bottom: 0;
+  
+      .navlinks.active {
+          display: flex;
       }
-    
-      .nav_toggle {
-        display: none;
-      }
-    
-      .nav_link {
-        color: var(--second-color);
-      }
-    
-      .home {
-        height: 100vh;
-      }
-    
-      .home_data {
-        align-self: flex-end;
-      }
-    
-      .home_social {
-        padding-top: 0;
-        padding-bottom: 2.5rem;
-        flex-direction: row;
-        align-self: flex-end;
-      }
-    
-      .home_social-icon {
-        margin-bottom: 0;
-        margin-right: var(--mb-4);
-      }
-    
-      .home_img {
-        width: 475px;
-        bottom: 15%;
-      }
-    
-      .about_container,
-      .skills_container {
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-        text-align: initial;
-      }
-    
-      .about_img img {
-        width: 300px;
-      }
-    
-      .work_container {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        column-gap: 2rem;
-      }
-    
-      .contact_form {
-        width: 360px;
-      }
-    
-      .contact_container {
-        justify-items: center;
-      }
-    }
-    
-    @media screen and (min-width: 1024px) {
-      .bg-grid {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
+  }
+  
+  
