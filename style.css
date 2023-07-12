@@ -80,6 +80,10 @@ font-size: var(--body-font);
     color: var(--text-color);
   }
   
+span{
+  color: var(--main-color);
+}
+
   nav{
     position: fixed;
     top: 0;
